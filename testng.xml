@@ -1,0 +1,47 @@
+<suite name = "userSuite">
+    <listeners>
+		<listener class-name="org.uncommons.reportng.HTMLReporter" />
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+	</listeners>
+    <test name="testSuite" preserver-order="true">
+		<classes>
+			<!-- 支持城市及相关信息 -->
+			<class name="com.Demo.test.SupportCityServiceRequestTest"></class>
+			<!-- 获取大首页信息 -->
+			<class name="com.Demo.test.GetBigHomePageInfoRequestTest"></class>
+			<!-- html地址统一下发接口 -->
+			<class name="com.Demo.test.Iwjwh5urlRequestTest"></class>
+			<!-- 根据城市获取筛选属性 -->
+			<class name="com.Demo.test.FilterParamRequestTest"></class>
+			<!-- 首页猜你喜欢 -->
+			<class name="com.Demo.test.SecondHouseRecommendRequestTest"></class>
+			<!-- 获取区域/板块列表 -->
+			<class name="com.Demo.test.AreaDataServiceRequestTest"></class>
+			<!-- 根据城市获取地铁线(包括地铁站)的信息 -->
+			<class name="com.Demo.test.SubwayLineStationListByCityRequestTest"></class>
+			<!-- 根据用户坐标获取附近在售信息 -->
+			<class name="com.Demo.test.NearbyEstatesRequestTest"></class>
+			<!-- 热门推荐/个性化推荐数据获取 -->
+			<class name="com.Demo.test.SpecialPageRequestTest"></class>
+			<!-- 根据类型获取关注的小区列表（租房、二手房） -->
+			<class name="com.Demo.test.CollectionEstateListByTypeRequestTest"></class>
+			<!-- 提醒、通知当前数目 -->
+			<class name="com.Demo.test.NoticeRequestTest"></class>
+			<!-- 新房关注列表 -->
+			<class name="com.Demo.test.CollectionNewHouseListRequestTest"></class>
+			<!-- 读取用户房贷计算记录 -->
+			<class name="com.Demo.test.MortgageCalcRequestTest"></class>
+			<!-- 根据房源类型获取关注的房源列表（租房、二手房 -->
+			<class name="com.Demo.test.CollectionHouseListByTypeRequestTest"></class>
+			<!-- 根据地图层级获取打点数据 -->
+			<class name="com.Demo.test.HouseMarkByLevelRequestTest"></class>
+			<!-- 小区房源列表 -->
+			<class name="com.Demo.test.HouseSummaryListByEstateIdRequestTest"></class>
+			<!-- 地图可视范围内的房源列表 -->
+			<class name="com.Demo.test.HouseSummaryListByLevelRequestTest"></class>
+			<!-- 搜索Tips && 热门搜索结果 -->
+			<class name="com.Demo.test.KeywordServiceRequestTest"></class>
+		</classes>
+	</test>
+    
+</suite>
