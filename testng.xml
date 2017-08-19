@@ -1,8 +1,8 @@
 <suite name = "userSuite">
  <!--   <listeners>
 		<listener class-name="org.uncommons.reportng.HTMLReporter" />
-		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" /> -->
-	</listeners>
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+	</listeners> -->
     <test name="testSuite">
 		<classes>
 			<!-- 支持城市及相关信息 -->
