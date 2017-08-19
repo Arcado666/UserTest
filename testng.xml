@@ -1,9 +1,9 @@
 <suite name = "userSuite">
-    <listeners>
+ <!--   <listeners>
 		<listener class-name="org.uncommons.reportng.HTMLReporter" />
-		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
+		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" /> -->
 	</listeners>
-    <test name="testSuite" preserver-order="true">
+    <test name="testSuite">
 		<classes>
 			<!-- 支持城市及相关信息 -->
 			<class name="com.Demo.test.SupportCityServiceRequestTest"></class>
