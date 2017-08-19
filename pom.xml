@@ -3,7 +3,6 @@
   <groupId>UserTest</groupId>
   <artifactId>UserTest</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  
   <dependencies>
   <dependency>
     <groupId>org.uncommons</groupId>
@@ -19,7 +18,7 @@
     <scope>test</scope>
  </dependency>
  
- <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+  <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
@@ -60,21 +59,17 @@
 		<version>2.4</version>  
 		<classifier>jdk15</classifier><!--指定jdk版本-->  
 	</dependency> 
-	 <!-- 这个是为了引入本地jra包到maven工程，如过本地库没有该jar包时，把注释打开即可 -->
-	 
-	<dependency>  
-    	<groupId>InterfaceUtil</groupId>  
-    	<artifactId>InterfaceUtil</artifactId>  
-    	<version>0.0.1</version>  
+  <!-- 这个是为了引入本地jra包到maven工程，如过本地库没有该jar包时，把注释打开即可 -->
+         
+        <dependency>  
+        <groupId>InterfaceUtil</groupId>  
+        <artifactId>InterfaceUtil</artifactId>  
+        <version>0.0.1</version>  
        <!-- <scope>system</scope>  
-  		<systemPath>${project.basedir}/target/lib/InterfaceUtil-0.0.1.jar</systemPath>  -->
-	</dependency> 
-
- 
+                <systemPath>${project.basedir}/target/lib/InterfaceUtil-0.0.1.jar</systemPath>  -->
+        </dependency> 
     </dependencies>
-
-    
-     <build>
+    <build>
         <sourceDirectory>**/src/main/java</sourceDirectory>
         <plugins>
         <plugin>
