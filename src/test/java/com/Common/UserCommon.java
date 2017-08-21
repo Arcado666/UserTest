@@ -8,7 +8,7 @@ public class UserCommon {
 	String cityId = "2";
 	String App_Key = "iwjw.superjia.com";
 	String App_Time = new Date().getTime() + "";
-	String ver = "6.6";
+	String ver = "7.3";
 //	String os = "iphone OS";
 //	String imei = "85F6664F-6FF3-42DF-888C-B0D280501165";
 	String os = "android";
