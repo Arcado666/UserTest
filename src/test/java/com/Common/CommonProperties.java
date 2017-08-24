@@ -10,7 +10,7 @@ import com.qiang.utils.FitnesseUtils;
 import com.qiang.utils.UseProperties;
 
 public class CommonProperties {
-	String mobile = "17455223369";
+	String mobile = "17455223368";
 	String url = new UserCommon().getHost();
 	String verify;
 	String result;
