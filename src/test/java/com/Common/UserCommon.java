@@ -3,12 +3,12 @@ package com.Common;
 import java.util.Date;
 
 public class UserCommon {
-//	String host = "userapp.iwjwtest.com";//userappbeta.iwjw.com:8101  userapp.iwjwtest.com
-	String host = "userappbeta.iwjw.com:8101";
+	String host = "userapp.iwjwtest.com";//userappbeta.iwjw.com:8101  userapp.iwjwtest.com
+//	String host = "userappbeta.iwjw.com:8101";
 	String cityId = "2";
 	String App_Key = "iwjw.superjia.com";
 	String App_Time = new Date().getTime() + "";
-	String ver = "7.3";
+	String ver = "7.4";
 //	String os = "iphone OS";
 //	String imei = "85F6664F-6FF3-42DF-888C-B0D280501165";
 	String os = "android";
