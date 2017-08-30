@@ -1,5 +1,7 @@
 package com.Demo.test;
 
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -8,6 +10,8 @@ import com.Demo.AddHouseReviewConsultRequest;
 import com.qiang.utils.UseProperties;
 
 public class AddHouseReviewConsultRequestTest {
+	
+	private static final Logger log= Logger.getLogger(AddHouseReviewConsultRequestTest.class);
 	String mobile ;
 	String url = new UserCommon().getHost();
 	String uticket;
@@ -20,7 +24,9 @@ public class AddHouseReviewConsultRequestTest {
 		}
   @Test
   public void getAddHouseReviewConsultResponse() {
+	PropertyConfigurator.configure("log4j.properties");
     String result = new AddHouseReviewConsultRequest().getAddHouseReviewConsultResponse("", uticket, "", "", "");
-    System.err.println(result);
+    log.error(result);
+    log.info("日志测试"+result);
   }
 }
