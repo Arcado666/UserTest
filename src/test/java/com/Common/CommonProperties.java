@@ -1,6 +1,8 @@
 package com.Common;
 
 import java.io.IOException;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 
 import com.Demo.SendVerifyCodeRequest;
 import com.Demo.UserLoginRequest;
@@ -11,6 +13,7 @@ import com.qiang.utils.UseProperties;
 
 public class CommonProperties {
 	//测试分支合并
+	private static final Logger log= Logger.getLogger(CommonProperties.class);
 	String mobile = "18701963886";
 	String url = new UserCommon().getHost();
 	String verify;
@@ -35,7 +38,7 @@ public class CommonProperties {
 		}
 		else{
 			String message = new SendVerifyCodeRequest().getVerifyCodeResponse(mobile);
-			System.out.println(message);
+			log.info("日志测试:"+message);
 			try {
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {
@@ -58,6 +61,7 @@ public class CommonProperties {
 	}
 	
 	public static void main(String[] args) {
+		PropertyConfigurator.configure("log4j.properties");
 		try {
 			new CommonProperties().setProperties();
 			System.out.println("文件写入成功");
