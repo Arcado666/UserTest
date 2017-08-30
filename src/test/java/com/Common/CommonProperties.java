@@ -10,7 +10,6 @@ import com.qiang.utils.FitnesseUtils;
 import com.qiang.utils.UseProperties;
 
 public class CommonProperties {
-	//测试分支合并
 	String mobile = "18701963886";
 	String url = new UserCommon().getHost();
 	String verify;
