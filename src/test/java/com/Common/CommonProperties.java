@@ -11,7 +11,6 @@ import com.qiang.utils.UseProperties;
 
 public class CommonProperties {
 	String mobile = "18701963886";
-	
 	String url = new UserCommon().getHost();
 	String verify;
 	String result;
