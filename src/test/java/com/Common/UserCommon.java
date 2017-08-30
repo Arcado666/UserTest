@@ -3,8 +3,8 @@ package com.Common;
 import java.util.Date;
 
 public class UserCommon {
-	String host = "userapp.iwjwtest.com";//userappbeta.iwjw.com:8101  userapp.iwjwtest.com
-//	String host = "userappbeta.iwjw.com:8101";
+//	String host = "userapp.iwjwtest.com";//userappbeta.iwjw.com:8101  userapp.iwjwtest.com
+	String host = "userappbeta.iwjw.com:8101";
 	String cityId = "2";
 	String App_Key = "iwjw.superjia.com";
 	String App_Time = new Date().getTime() + "";
