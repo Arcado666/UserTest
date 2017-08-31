@@ -1,5 +1,6 @@
 package com.Demo.test;
 
+import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -8,6 +9,7 @@ import com.Demo.SupportCityServiceRequest;
 import com.qiang.utils.CommonUtils;
 
 public class SupportCityServiceRequestTest {
+	
 	String result;
 	@BeforeClass
 	public void BeforeClass() {
@@ -33,7 +35,7 @@ public class SupportCityServiceRequestTest {
 	}
 	@Test
 	public void getSupportCityServiceResponse5() {
-		Assert.assertEquals(CommonUtils.parseJson("helpCenterUrl", result), "http://m.iwjw.com/help");
+		Assert.assertEquals(CommonUtils.parseJson("helpCenterUrl", result), "http://m.iwjwbeta.com/help");
 	}
 	@Test
 	public void getSupportCityServiceResponse6() {
@@ -49,7 +51,7 @@ public class SupportCityServiceRequestTest {
 	}
 	@Test
 	public void getSupportCityServiceResponse9() {
-		Assert.assertEquals(CommonUtils.parseJson("serviceTel", result), "1010-6622");
+		Assert.assertEquals(CommonUtils.parseJson("serviceTel", result), "400-700-6622");
 	}
 	@Test
 	public void getSupportCityServiceResponse10() {
