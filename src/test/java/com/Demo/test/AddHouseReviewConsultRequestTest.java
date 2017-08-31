@@ -1,7 +1,6 @@
 package com.Demo.test;
 
 import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -24,7 +23,6 @@ public class AddHouseReviewConsultRequestTest {
 		}
   @Test
   public void getAddHouseReviewConsultResponse() {
-	PropertyConfigurator.configure("log4j.properties");
     String result = new AddHouseReviewConsultRequest().getAddHouseReviewConsultResponse("", uticket, "", "", "");
     log.error(result);
     log.info("日志测试"+result);
