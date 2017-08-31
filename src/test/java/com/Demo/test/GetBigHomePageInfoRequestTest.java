@@ -33,10 +33,11 @@ public class GetBigHomePageInfoRequestTest {
 		functionChannelTools = CommonUtils.parseJson("functionChannelTools", result);
 	    System.err.println(result);
 		}
-  @Test
-  public void getGetBigHomePageInfoResponse1() {
-    Assert.assertEquals(CommonUtils.parseJson("brandedResidenceTitle", result), "租房免中介费！");
-  }
+//	7.2需求变更，去掉品牌公寓租房免中介费显示
+//  @Test
+//  public void getGetBigHomePageInfoResponse1() {
+//    Assert.assertEquals(CommonUtils.parseJson("brandedResidenceTitle", result), "租房免中介费！");
+//  }
   @Test
   public void getGetBigHomePageInfoResponse2() {
     Assert.assertTrue(CommonUtils.parseJson("cityTradeHistoryDetailUrl", result).contains("http://m.iwjw.com/hisTradeData/"));
@@ -52,33 +53,33 @@ public class GetBigHomePageInfoRequestTest {
 	  for (int i = 0; i < size; i++) {
 		FunctionChannel fChannel = fChannels.get(i);
 		if (fChannel.getType() == 1) {
-			Assert.assertEquals(fChannel.getIconUrl(), "http://files.iwjw.com/resource/userapp/v6.2/home_main_ershoufang.png");
+			Assert.assertEquals(fChannel.getIconUrl(), "http://files.iwjw.com/directwaterbucket/appconfig/2017/6/2/55a8b795d5a04f3e94f0e48ee7ca82bc");
 			Assert.assertEquals(fChannel.getIsHot(), "0");
 			Assert.assertEquals(fChannel.getIsTool(), "0");
 			Assert.assertEquals(fChannel.getTitle(), "二手房");
 		}
 		if (fChannel.getType() == 2) {
-			Assert.assertEquals(fChannel.getIconUrl(), "http://files.iwjw.com/resource/userapp/v6.2/home_main_xinfang.png");
+			Assert.assertEquals(fChannel.getIconUrl(), "http://files.iwjw.com/directwaterbucket/appconfig/2017/6/2/9ec0ec471a044516a21c6828d2785b05");
 			Assert.assertEquals(fChannel.getIsHot(), "0");
 			Assert.assertEquals(fChannel.getIsTool(), "0");
 			Assert.assertEquals(fChannel.getTitle(), "新房");
 			Assert.assertTrue(fChannel.getDetailUrl().contains("newHouseIndex/shanghai"));
 		}
 		if (fChannel.getType() == 3) {
-			Assert.assertEquals(fChannel.getIconUrl(), "http://files.iwjw.com/resource/userapp/v6.2/home_main_zufang.png");
+			Assert.assertEquals(fChannel.getIconUrl(), "http://files.iwjw.com/directwaterbucket/appconfig/2017/6/2/a6bf2490e85b43f0a0420d4639f07ab2");
 			Assert.assertEquals(fChannel.getIsHot(), "0");
 			Assert.assertEquals(fChannel.getIsTool(), "0");
 			Assert.assertEquals(fChannel.getTitle(), "租房");
 		}
 		if (fChannel.getType() == 4) {
-			Assert.assertEquals(fChannel.getIconUrl(), "http://files.iwjw.com/resource/userapp/v6.2/home_main_ailicai.png");
+			Assert.assertEquals(fChannel.getIconUrl(), "http://files.iwjw.com/directwaterbucket/appconfig/2017/8/21/7724514d730844f696edd37ba5315677");
 			Assert.assertEquals(fChannel.getIsHot(), "0");
 			Assert.assertEquals(fChannel.getIsTool(), "0");
 			Assert.assertEquals(fChannel.getTitle(), "爱理财");
 			Assert.assertTrue(fChannel.getDetailUrl().contains("licai/licaiindex"));
 		}
 		if (fChannel.getType() == 20) {
-			Assert.assertEquals(fChannel.getIconUrl(), "http://files.iwjw.com/resource/userapp/v6.2/home_main_gongyu.png");
+			Assert.assertEquals(fChannel.getIconUrl(), "http://files.iwjw.com/directwaterbucket/appconfig/2017/8/3/9f2df692c1d74c3f8f44076db4fc1c2c");
 			Assert.assertEquals(fChannel.getIsHot(), "1");
 			Assert.assertEquals(fChannel.getIsTool(), "0");
 			Assert.assertEquals(fChannel.getTitle(), "公寓租房");
@@ -87,33 +88,36 @@ public class GetBigHomePageInfoRequestTest {
 	}
     
   }
-  @Test
-  public void getGetBigHomePageInfoResponse5() {
-	  List<FunctionChannel> fChannels = JSON.parseArray(functionChannel2, FunctionChannel.class);
-	  int size = fChannels.size();
-	  for (int i = 0; i < size; i++) {
-		FunctionChannel fChannel = fChannels.get(i);
-		if (fChannel.getType() == 21) {
-			Assert.assertEquals(fChannel.getIconUrl(), "http://files.iwjw.com/resource/userapp/v6.2/home_main_baike.png");
-			Assert.assertEquals(fChannel.getIsHot(), "0");
-			Assert.assertEquals(fChannel.getIsTool(), "0");
-			Assert.assertEquals(fChannel.getTitle(), "查小区");
-		}
-		if (fChannel.getType() == 5) {
-			Assert.assertEquals(fChannel.getIconUrl(), "http://files.iwjw.com/resource/userapp/v6.2/home_main_maifang.png");
-			Assert.assertEquals(fChannel.getIsHot(), "0");
-			Assert.assertEquals(fChannel.getIsTool(), "0");
-			Assert.assertEquals(fChannel.getTitle(), "房东委托");
-		}
-		if (fChannel.getType() == 13) {
-			Assert.assertEquals(fChannel.getIconUrl(), "http://files.iwjw.com/resource/userapp/v6.2/home_main_daizongguan.png");
-			Assert.assertEquals(fChannel.getIsHot(), "0");
-			Assert.assertEquals(fChannel.getIsTool(), "0");
-			Assert.assertEquals(fChannel.getTitle(), "贷总管");
-			Assert.assertTrue(fChannel.getDetailUrl().contains("/borrower#!/"));
-		}
-	}
-  }
+  /**
+   * 大首页九宫格内第二排数据functionChannel2放入 functionChannel1中，functionChannel2舍弃
+   */
+//  @Test
+//  public void getGetBigHomePageInfoResponse5() {
+//	  List<FunctionChannel> fChannels = JSON.parseArray(functionChannel2, FunctionChannel.class);
+//	  int size = fChannels.size();
+//	  for (int i = 0; i < size; i++) {
+//		FunctionChannel fChannel = fChannels.get(i);
+//		if (fChannel.getType() == 21) {
+//			Assert.assertEquals(fChannel.getIconUrl(), "http://files.iwjw.com/resource/userapp/v6.2/home_main_baike.png");
+//			Assert.assertEquals(fChannel.getIsHot(), "0");
+//			Assert.assertEquals(fChannel.getIsTool(), "0");
+//			Assert.assertEquals(fChannel.getTitle(), "查小区");
+//		}
+//		if (fChannel.getType() == 5) {
+//			Assert.assertEquals(fChannel.getIconUrl(), "http://files.iwjw.com/resource/userapp/v6.2/home_main_maifang.png");
+//			Assert.assertEquals(fChannel.getIsHot(), "0");
+//			Assert.assertEquals(fChannel.getIsTool(), "0");
+//			Assert.assertEquals(fChannel.getTitle(), "房东委托");
+//		}
+//		if (fChannel.getType() == 13) {
+//			Assert.assertEquals(fChannel.getIconUrl(), "http://files.iwjw.com/resource/userapp/v6.2/home_main_daizongguan.png");
+//			Assert.assertEquals(fChannel.getIsHot(), "0");
+//			Assert.assertEquals(fChannel.getIsTool(), "0");
+//			Assert.assertEquals(fChannel.getTitle(), "贷总管");
+//			Assert.assertTrue(fChannel.getDetailUrl().contains("/borrower#!/"));
+//		}
+//	}
+//  }
   @Test
   public void getGetBigHomePageInfoResponse6() {
 	  List<FunctionChannel> fChannels = JSON.parseArray(functionChannelTools, FunctionChannel.class);
@@ -121,7 +125,7 @@ public class GetBigHomePageInfoRequestTest {
 	  for (int i = 0; i < size; i++) {
 		FunctionChannel fChannel = fChannels.get(i);
 		if (fChannel.getType() == 18) {
-			Assert.assertEquals(fChannel.getIconUrl(), "http://files.iwjw.com/resource/userapp/v6.4/home_tool_chafangjia@3x.png?6.5");
+			Assert.assertEquals(fChannel.getIconUrl(), "http://files.iwjw.com/resource/userapp/image/home_icon/home_tool_chafangjiav67.png");
 			Assert.assertEquals(fChannel.getIsHot(), "0");
 			Assert.assertEquals(fChannel.getIsTool(), "1");
 			Assert.assertEquals(fChannel.getTitle(), "查房价");

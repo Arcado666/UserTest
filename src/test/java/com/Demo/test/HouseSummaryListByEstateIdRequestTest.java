@@ -1,11 +1,9 @@
 package com.Demo.test;
 
 import java.util.List;
-
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
 import com.Common.UserCommon;
 import com.Demo.HouseSummaryListByEstateIdRequest;
 import com.Model.HouseBaseModel;
@@ -44,7 +42,7 @@ public class HouseSummaryListByEstateIdRequestTest {
     Assert.assertEquals(CommonUtils.parseJson("areaName", result1), "宝山");
     Assert.assertEquals(CommonUtils.parseJson("estateId", result1), "9193");
     Assert.assertEquals(CommonUtils.parseJson("constructDate", result1), "2005");
-    Assert.assertEquals(CommonUtils.parseJson("attentionNo", result1), "57");
+    Assert.assertEquals(CommonUtils.parseJson("attentionNo", result1), "59");//关注数量
   }
   @Test
   public void getHouseSummaryListByLevelResponse2() {
@@ -90,7 +88,7 @@ public class HouseSummaryListByEstateIdRequestTest {
 	    Assert.assertEquals(CommonUtils.parseJson("areaName", result2), "普陀");
 	    Assert.assertEquals(CommonUtils.parseJson("estateId", result2), "6367");
 	    Assert.assertEquals(CommonUtils.parseJson("constructDate", result2), "1995");
-	    Assert.assertEquals(CommonUtils.parseJson("attentionNo", result2), "23");
+	    Assert.assertEquals(CommonUtils.parseJson("attentionNo", result2), "25");
   }
   @Test
   public void getHouseSummaryListByLevelResponse4() {
