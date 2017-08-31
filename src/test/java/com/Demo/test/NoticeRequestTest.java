@@ -26,9 +26,7 @@ public class NoticeRequestTest {
     String result = new NoticeRequest().getNoticeResponse(uticket, "1");
     
     //查询用户未读消息数目SELECT COUNT(*) FROM iwnotice_beta.iw_notice_remind WHERE receiveId=2726861 and status = 0;
-    
-    
-    
+	  //测试
     DbSlimSelectQuery db = new DbSlimSelectQuery("121.40.127.92", "3309", "qa_tmp", "mjl84_)l23jda0l_23");
 	String num = db.queryByName("COUNT(*)","SELECT COUNT(*) FROM iwnotice_beta.iw_notice_remind WHERE receiveId="+userId+" and status = 0;");
     Assert.assertEquals(CommonUtils.parseJson("remindNum", result), num);
