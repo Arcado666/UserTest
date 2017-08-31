@@ -34,7 +34,8 @@ public class Iwjwh5urlRequestTest {
     Assert.assertTrue(CommonUtils.parseJson("orderH5Url", result).contains("/myorder"));
     Assert.assertTrue(CommonUtils.parseJson("orderDetailH5Url", result).contains("/myorder#!/myorder/detail"));
     Assert.assertTrue(CommonUtils.parseJson("aboutUrl", result).contains("/about/"));
-    Assert.assertTrue(CommonUtils.parseJson("alicaiType", result).contains("2"));
+    //爱理财开启方式 0-关闭 1-理财首页 2-资产页
+    Assert.assertTrue(CommonUtils.parseJson("alicaiType", result).contains("1"));
     Assert.assertTrue(CommonUtils.parseJson("rentHouseCommissionUrl", result).contains("http://m.iwjw.com/jiaizhai/chuzumanager"));
     Assert.assertTrue(CommonUtils.parseJson("rentOrderDetailH5Url", result).contains("/myorder#!/rent_detail"));
     Assert.assertTrue(CommonUtils.parseJson("rentBillDetailH5Url", result).contains("/myorder#!/rent_bill"));
