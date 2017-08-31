@@ -2,8 +2,6 @@ package com.Common;
 
 import java.io.IOException;
 import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
-
 import com.Demo.SendVerifyCodeRequest;
 import com.Demo.UserLoginRequest;
 import com.qiang.db.slim.DbSlimSelectQuery;

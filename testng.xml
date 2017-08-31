@@ -43,6 +43,8 @@
 			<class name="com.Demo.test.HouseSummaryListByLevelRequestTest"></class>
 			<!-- 搜索Tips && 热门搜索结果 -->
 			<class name="com.Demo.test.KeywordServiceRequestTest"></class>
+			<!-- 房源评价用户咨询 -->
+			<class name="com.Demo.test.AddHouseReviewConsultRequestTest"></class>
 		</classes>
 	</test>
     
