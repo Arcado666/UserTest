@@ -60,7 +60,6 @@ public class CommonProperties {
 	}
 	
 	public static void main(String[] args) {
-		PropertyConfigurator.configure("log4j.properties");
 		try {
 			new CommonProperties().setProperties();
 			System.out.println("文件写入成功");
