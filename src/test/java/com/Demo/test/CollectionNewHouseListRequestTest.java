@@ -85,7 +85,7 @@ public class CollectionNewHouseListRequestTest {
 	    if(estateLists.size()!=0){
 	    	for (int i = 0; i < estateLists.size(); i++) {
 	    	NewHouseList newHouseList = estateLists.get(i);
-	    	if (!newHouseList.getLayoutModelList().isEmpty()) {
+	    	if (newHouseList.getLayoutModelList()!= null&&!newHouseList.getLayoutModelList().isEmpty()) {
 				List<LayoutModel> layoutModels = JSON.parseArray(JSON.toJSONString(newHouseList.getLayoutModelList()), LayoutModel.class);
 				for (int j = 0; j < layoutModels.size(); j++) {
 					LayoutModel layoutModel = layoutModels.get(j);
