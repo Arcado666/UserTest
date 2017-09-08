@@ -163,7 +163,7 @@ public class HouseSummaryListByEstateIdRequestTest {
 		LOGGER.info("getEstateName="+houseBaseModel.getEstateName()+"");
 		Assert.assertEquals(houseBaseModel.getEstateName(), "真光四街坊");
 		LOGGER.info("getAreaName="+houseBaseModel.getAreaName()+"");
-		Assert.assertEquals(houseBaseModel.getAreaName(), "普陀 真光");
+		Assert.assertEquals(houseBaseModel.getAreaName(), "普陀");
 		LOGGER.info("getFloorType="+houseBaseModel.getFloorType()+"");
 		Assert.assertNotNull(houseBaseModel.getFloorType());
 		LOGGER.info("getFloorType2="+houseBaseModel.getFloorType2()+"");
@@ -232,7 +232,7 @@ public class HouseSummaryListByEstateIdRequestTest {
 		LOGGER.info("getEstateName="+houseBaseModel.getEstateName()+"");
 		Assert.assertEquals(houseBaseModel.getEstateName(), "长征家苑");
 		LOGGER.info("getAreaName="+houseBaseModel.getAreaName()+"");
-		Assert.assertEquals(houseBaseModel.getAreaName(), "普陀 真光");
+		Assert.assertEquals(houseBaseModel.getAreaName(), "普陀");
 		LOGGER.info("getHouseId="+houseBaseModel.getHouseId()+"");
 		Assert.assertNotNull(houseBaseModel.getHouseId());
 		LOGGER.info("getFloorType="+houseBaseModel.getFloorType()+"");
