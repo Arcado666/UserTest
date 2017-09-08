@@ -2,7 +2,9 @@ package com.Demo.test;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -14,6 +16,7 @@ import com.qiang.utils.CommonUtils;
 import com.qiang.utils.UseProperties;
 
 public class GetBigHomePageInfoRequestTest {
+	public static final Logger LOGGER = Logger.getLogger(GetBigHomePageInfoRequestTest.class);
 	String mobile ;
 	String url = new UserCommon().getHost();
 	String uticket;
@@ -31,7 +34,11 @@ public class GetBigHomePageInfoRequestTest {
 		functionChannel1 = CommonUtils.parseJson("functionChannel1", result);
 		functionChannel2 = CommonUtils.parseJson("functionChannel2", result);
 		functionChannelTools = CommonUtils.parseJson("functionChannelTools", result);
-	    System.err.println(result);
+		LOGGER.info("获取大首页--->>>");
+	    LOGGER.info(result+"="+result+"");
+	    LOGGER.info(functionChannel1+"="+functionChannel1+"");
+	    LOGGER.info(functionChannel2+"="+functionChannel2+"");
+	    LOGGER.info(functionChannelTools+"="+functionChannelTools+"");
 		}
 //	7.2需求变更，去掉品牌公寓租房免中介费显示
 //  @Test
@@ -40,15 +47,19 @@ public class GetBigHomePageInfoRequestTest {
 //  }
   @Test
   public void getGetBigHomePageInfoResponse2() {
+	  LOGGER.info("验证cityTradeHistoryDetailUrl字段");
     Assert.assertTrue(CommonUtils.parseJson("cityTradeHistoryDetailUrl", result).contains("http://m.iwjw.com/hisTradeData/"));
   }
   @Test
   public void getGetBigHomePageInfoResponse3() {
+	  LOGGER.info("验证cityTradeHistoryTitle字段");
     Assert.assertEquals(CommonUtils.parseJson("cityTradeHistoryTitle", result), "上海二手房交易报告");
   }
   @Test
   public void getGetBigHomePageInfoResponse4() {
+	  LOGGER.info("验证functionChannel1字段");
 	  List<FunctionChannel> fChannels = JSON.parseArray(functionChannel1, FunctionChannel.class);
+	  
 	  int size = fChannels.size();
 	  for (int i = 0; i < size; i++) {
 		FunctionChannel fChannel = fChannels.get(i);
@@ -75,7 +86,7 @@ public class GetBigHomePageInfoRequestTest {
 			Assert.assertEquals(fChannel.getIconUrl(), "http://files.iwjw.com/directwaterbucket/appconfig/2017/8/21/7724514d730844f696edd37ba5315677");
 			Assert.assertEquals(fChannel.getIsHot(), "0");
 			Assert.assertEquals(fChannel.getIsTool(), "0");
-			Assert.assertEquals(fChannel.getTitle(), "爱理财");
+			Assert.assertEquals(fChannel.getTitle(), "吉爱财");
 			Assert.assertTrue(fChannel.getDetailUrl().contains("licai/licaiindex"));
 		}
 		if (fChannel.getType() == 20) {
@@ -120,7 +131,9 @@ public class GetBigHomePageInfoRequestTest {
 //  }
   @Test
   public void getGetBigHomePageInfoResponse6() {
+	  LOGGER.info("验证functionChannelTools字段");
 	  List<FunctionChannel> fChannels = JSON.parseArray(functionChannelTools, FunctionChannel.class);
+	  
 	  int size = fChannels.size();
 	  for (int i = 0; i < size; i++) {
 		FunctionChannel fChannel = fChannels.get(i);
@@ -164,5 +177,10 @@ public class GetBigHomePageInfoRequestTest {
 			Assert.assertTrue(fChannel.getDetailUrl().contains("/baike/shanghai"));
 		}
 	}
+  }
+  
+  @AfterClass
+  public void afterclass(){
+	  LOGGER.info("<<<---获取大首页");
   }
 }

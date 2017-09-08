@@ -1,26 +1,28 @@
 package com.Demo.test;
 
+import org.apache.log4j.Logger;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.Demo.Iwjwh5urlRequest;
 import com.qiang.utils.CommonUtils;
-import com.qiang.utils.FormJSON;
 
 
 public class Iwjwh5urlRequestTest {
+	public static final Logger LOGGER = Logger.getLogger(Iwjwh5urlRequestTest.class);
 	String result ;
 	@BeforeClass
 	public void BeforeClass(){
 		result = new Iwjwh5urlRequest().getIwjwh5urlResponse();
+		LOGGER.info("result="+result+"");
+		LOGGER.info("html地址统一下发接口--->>>");
 	}
   @Test
   public void getIwjwh5urlResponse() {
-	  System.err.println(FormJSON.format(result));
-	  
-    Assert.assertTrue(CommonUtils.parseJson("helpCenterUrl", result).contains("http://m.iwjw.com/help"));
-    Assert.assertTrue(CommonUtils.parseJson("loanHelpUrl", result).contains("http://m.iwjw.com/helpRight/6"));
+    Assert.assertTrue(CommonUtils.parseJson("helpCenterUrl", result).contains("http://m.iwjwbeta.com/help"));
+    Assert.assertTrue(CommonUtils.parseJson("loanHelpUrl", result).contains("http://m.iwjwbeta.com/helpRight/6"));
     Assert.assertTrue(CommonUtils.parseJson("safecardExplainUrl", result).contains("/licai/safecard"));
     Assert.assertTrue(CommonUtils.parseJson("supportcardsByAllUrl", result).contains("/licai/supportcards"));
     Assert.assertTrue(CommonUtils.parseJson("supportcardsByBankUrl", result).contains("/licai/supportcards?type=bank"));
@@ -44,5 +46,9 @@ public class Iwjwh5urlRequestTest {
     Assert.assertTrue(CommonUtils.parseJson("tiyanbaoDetailUrl", result).contains("/licai/index#!/tiyanbao"));
     Assert.assertTrue(CommonUtils.parseJson("productDetailUrl", result).contains("/licai/index#!/detail"));
     Assert.assertTrue(CommonUtils.parseJson("rebateUrl", result).contains("voucher/rebate-detail"));
+  }
+  @AfterClass
+  public void afterclass(){
+	  LOGGER.info("<<<---html地址统一下发接口");
   }
 }

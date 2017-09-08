@@ -2,7 +2,9 @@ package com.Demo.test;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -10,37 +12,45 @@ import com.Demo.FilterParamRequest;
 import com.Model.RegionProperties;
 import com.alibaba.fastjson.JSON;
 import com.qiang.utils.CommonUtils;
-import com.qiang.utils.FormJSON;
 
 public class FilterParamRequestTest {
+	public static final Logger LOGGER = Logger.getLogger(FilterParamRequestTest.class);
 	 public List<RegionProperties> priceRegion; // 价格区间
 	 public List<RegionProperties> spaceRegion; // 面积区间
 	 public List<RegionProperties> estateRegion; // 小区均价区间
 	 @BeforeClass
 	 public void BeforeClass(){
+		 LOGGER.info("根据城市获取筛选属性--->>>");
 		 String result = new FilterParamRequest().getFilterParamResponse("上海");
+		 LOGGER.info(result);
 		    priceRegion = JSON.parseArray(CommonUtils.parseJson("priceRegion", result), RegionProperties.class);
 		    spaceRegion = JSON.parseArray(CommonUtils.parseJson("spaceRegion", result), RegionProperties.class);
 		    estateRegion = JSON.parseArray(CommonUtils.parseJson("estateRegion", result), RegionProperties.class);
 	 }
   @Test
   public void getFilterParamResponse1() {
+	  LOGGER.info("获取北京筛选属性");
     String result = new FilterParamRequest().getFilterParamResponse("北京");
+    LOGGER.info(result);
     Assert.assertEquals(CommonUtils.parseJson("cityId", result), "12438");
   }
   @Test
   public void getFilterParamResponse2() {
+	  LOGGER.info("获取上海筛选属性");
     String result = new FilterParamRequest().getFilterParamResponse("2");
+    LOGGER.info(result);
     Assert.assertEquals(CommonUtils.parseJson("cityId", result), "2");
   }
   @Test
   public void getFilterParamResponse3() {
+	  LOGGER.info("获取上海筛选属性");
     String result = new FilterParamRequest().getFilterParamResponse("上海");
-    System.err.println(FormJSON.format(result));
+    LOGGER.info(result);
     Assert.assertEquals(CommonUtils.parseJson("cityId", result), "2");
   }
   @Test
   public void getFilterParamResponse4() {
+	  LOGGER.info("上海筛选属性价格区间");
     int size = priceRegion.size();
     for (int i = 0; i < size; i++) {
 		RegionProperties regionProperties = priceRegion.get(i);
@@ -85,6 +95,7 @@ public class FilterParamRequestTest {
   }
   @Test
   public void getFilterParamResponse5() {
+	  LOGGER.info("上海筛选属性面积区间");
 	  int size = spaceRegion.size();
 	  for (int i = 0; i < size; i++) {
 		  RegionProperties regionProperties = spaceRegion.get(i);
@@ -132,6 +143,7 @@ public class FilterParamRequestTest {
   }
   @Test
   public void getFilterParamResponse6() {
+	  LOGGER.info("上海筛选属性小区均价区间");
 	  int size = estateRegion.size();
 	  for (int i = 0; i < size; i++) {
 		  RegionProperties regionProperties = estateRegion.get(i);
@@ -168,5 +180,9 @@ public class FilterParamRequestTest {
 				Assert.assertTrue(regionProperties.getHighValue().equals("0"));
 			}
 	}
+  }
+  @AfterClass
+  public void afterclass(){
+	  LOGGER.info("<<<---根据城市获取筛选属性");
   }
 }
