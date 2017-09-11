@@ -5,6 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
+import com.Common.AddLogWrap;
 import com.Demo.AreaDataServiceRequest;
 
 public class AreaDataServiceRequestTest {
@@ -43,5 +44,6 @@ public class AreaDataServiceRequestTest {
   @AfterClass
   public void afterclass(){
 	  LOGGER.info("<<<---获取区域/板块列表");
+	  new AddLogWrap();
   }
 }

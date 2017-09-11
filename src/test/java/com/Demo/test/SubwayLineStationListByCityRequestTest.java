@@ -5,6 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
+import com.Common.AddLogWrap;
 import com.Demo.SubwayLineStationListByCityRequest;
 
 public class SubwayLineStationListByCityRequestTest {
@@ -28,5 +29,6 @@ public class SubwayLineStationListByCityRequestTest {
   @AfterClass
   public void afterclass(){
 	  LOGGER.info("<<<---根据城市获取地铁线(包括地铁站)的信息");
+	  new AddLogWrap();
   }
 }

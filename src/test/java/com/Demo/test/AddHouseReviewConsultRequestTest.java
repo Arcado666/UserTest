@@ -5,6 +5,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.Common.AddLogWrap;
 import com.Common.UserCommon;
 import com.Demo.AddHouseReviewConsultRequest;
 import com.qiang.utils.CommonUtils;
@@ -36,5 +37,6 @@ public class AddHouseReviewConsultRequestTest {
   @AfterClass
   public void afterclass(){
 	  LOGGER.info("<<<---房源评价用户咨询接口");
+	  new AddLogWrap();
   }
 }

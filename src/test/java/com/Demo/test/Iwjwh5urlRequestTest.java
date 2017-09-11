@@ -6,6 +6,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.Common.AddLogWrap;
 import com.Demo.Iwjwh5urlRequest;
 import com.qiang.utils.CommonUtils;
 
@@ -50,5 +51,6 @@ public class Iwjwh5urlRequestTest {
   @AfterClass
   public void afterclass(){
 	  LOGGER.info("<<<---html地址统一下发接口");
+	  new AddLogWrap();
   }
 }

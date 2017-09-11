@@ -6,6 +6,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.Common.AddLogWrap;
 import com.Common.UserCommon;
 import com.Demo.SecondHouseRecommendRequest;
 import com.qiang.utils.CommonUtils;
@@ -38,5 +39,6 @@ public class SecondHouseRecommendRequestTest {
   @AfterClass
   public void afterclass(){
 	  LOGGER.info("<<<---首页猜你喜欢");
+	  new AddLogWrap();
   }
 }

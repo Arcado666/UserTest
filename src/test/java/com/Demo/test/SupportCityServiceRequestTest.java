@@ -6,6 +6,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.Common.AddLogWrap;
 import com.Demo.SupportCityServiceRequest;
 import com.qiang.utils.CommonUtils;
 
@@ -78,6 +79,7 @@ public class SupportCityServiceRequestTest {
 	 @AfterClass
 	  public void afterclass(){
 		  LOGGER.info("<<<---支持城市及相关信息");
+		  new AddLogWrap();
 	  }
 	
 }

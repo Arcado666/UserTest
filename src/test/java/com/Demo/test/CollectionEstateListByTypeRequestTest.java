@@ -8,6 +8,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.Common.AddLogWrap;
 import com.Common.UserCommon;
 import com.Demo.CollectionEstateListByTypeRequest;
 import com.Model.CollectionEstate;
@@ -147,5 +148,6 @@ public class CollectionEstateListByTypeRequestTest {
   @AfterClass
   public void afterclass(){
 	  LOGGER.info("<<<---根据类型获取关注的小区列表（租房、二手房）");
+	  new AddLogWrap();
   }
 }

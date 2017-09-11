@@ -8,6 +8,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.Common.AddLogWrap;
 import com.Common.UserCommon;
 import com.Demo.KeywordServiceRequest;
 import com.Model.KeywordModel;
@@ -387,5 +388,6 @@ public class KeywordServiceRequestTest {
   @AfterClass
   public void afterclass(){
 	  LOGGER.info("<<<---热门搜索结果");
+	  new AddLogWrap();
   }
 }
