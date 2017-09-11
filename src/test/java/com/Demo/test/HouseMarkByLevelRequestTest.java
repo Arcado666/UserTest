@@ -8,6 +8,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.Common.AddLogWrap;
 import com.Common.UserCommon;
 import com.Demo.HouseMarkByLevelRequest;
 import com.Model.HouseMarkByLevelModel;
@@ -335,5 +336,6 @@ public class HouseMarkByLevelRequestTest {
   @AfterClass
   public void afterclass(){
 	  LOGGER.info("<<<---根据地图层级获取打点数据");
+	  new AddLogWrap();
   }
 }

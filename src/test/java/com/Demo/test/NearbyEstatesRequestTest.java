@@ -6,6 +6,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.Common.AddLogWrap;
 import com.Common.UserCommon;
 import com.Demo.NearbyEstatesRequest;
 import com.qiang.utils.CommonUtils;
@@ -33,5 +34,6 @@ public class NearbyEstatesRequestTest {
   @AfterClass
   public void afterclass(){
 	  LOGGER.info("<<<---根据用户坐标获取附近在售信息");
+	  new AddLogWrap();
   }
 }

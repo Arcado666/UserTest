@@ -8,6 +8,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.Common.AddLogWrap;
 import com.Common.UserCommon;
 import com.Demo.CollectionNewHouseListRequest;
 import com.Model.LayoutModel;
@@ -120,5 +121,6 @@ public class CollectionNewHouseListRequestTest {
   @AfterClass
   public void afterclass(){
 	  LOGGER.info("<<<---新房关注列表");
+	  new AddLogWrap();
   }
 }

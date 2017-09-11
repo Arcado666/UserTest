@@ -8,6 +8,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.Common.AddLogWrap;
 import com.Demo.FilterParamRequest;
 import com.Model.RegionProperties;
 import com.alibaba.fastjson.JSON;
@@ -184,5 +185,6 @@ public class FilterParamRequestTest {
   @AfterClass
   public void afterclass(){
 	  LOGGER.info("<<<---根据城市获取筛选属性");
+	  new AddLogWrap();
   }
 }

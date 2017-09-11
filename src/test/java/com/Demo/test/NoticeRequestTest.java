@@ -6,6 +6,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.Common.AddLogWrap;
 import com.Common.UserCommon;
 import com.Demo.NoticeRequest;
 import com.qiang.db.slim.DbSlimSelectQuery;
@@ -59,5 +60,6 @@ public class NoticeRequestTest {
   @AfterClass
   public void afterclass(){
 	  logger.info("<<<---账户提醒、通知测试");
+	  new AddLogWrap();
   }
 }

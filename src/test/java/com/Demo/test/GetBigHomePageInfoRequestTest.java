@@ -8,6 +8,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.Common.AddLogWrap;
 import com.Common.UserCommon;
 import com.Demo.GetBigHomePageInfoRequest;
 import com.Model.FunctionChannel;
@@ -182,5 +183,6 @@ public class GetBigHomePageInfoRequestTest {
   @AfterClass
   public void afterclass(){
 	  LOGGER.info("<<<---获取大首页");
+	  new AddLogWrap();
   }
 }

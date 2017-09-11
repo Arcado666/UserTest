@@ -7,6 +7,8 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
+import com.Common.AddLogWrap;
 import com.Common.UserCommon;
 import com.Demo.HouseSummaryListByEstateIdRequest;
 import com.Model.HouseBaseModel;
@@ -315,5 +317,6 @@ public class HouseSummaryListByEstateIdRequestTest {
   @AfterClass
   public void afterclass(){
 	  LOGGER.info("<<<---小区房源列表");
+	  new AddLogWrap();
   }
 }

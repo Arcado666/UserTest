@@ -6,6 +6,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.Common.AddLogWrap;
 import com.Common.UserCommon;
 import com.Demo.MortgageCalcRequest;
 import com.qiang.utils.CommonUtils;
@@ -48,5 +49,6 @@ public class MortgageCalcRequestTest {
   @AfterClass
   public void afterclass(){
 	  LOGGER.info("<<<---读取用户房贷计算记录");
+	  new AddLogWrap();
   }
 }

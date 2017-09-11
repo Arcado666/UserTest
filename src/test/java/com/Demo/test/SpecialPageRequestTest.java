@@ -6,6 +6,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.Common.AddLogWrap;
 import com.Common.UserCommon;
 import com.Demo.SpecialPageRequest;
 import com.qiang.utils.CommonUtils;
@@ -37,5 +38,6 @@ public class SpecialPageRequestTest {
   @AfterClass
   public void afterclass(){
 	  LOGGER.info("<<<---热门推荐/个性化推荐");
+	  new AddLogWrap();
   }
 }
